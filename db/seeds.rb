@@ -18,3 +18,14 @@
     )
   end
 end
+
+25.times do
+  user_id = Random.rand(1..User.all.count)
+  post_id = Random.rand(1..Post.all.count)
+
+  Comment.create!(
+    body: Faker::ChuckNorris.fact,
+    user_id: user_id,
+    post_id: post_id
+  )
+end
